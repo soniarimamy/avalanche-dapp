@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/components/WalletConnect.tsx","./src/config/index.ts","./src/contexts/Web3Context.tsx","./src/hooks/useWeb3.ts","./src/services/blockchain.service.ts","./src/types/index.ts"],"version":"6.0.3"}

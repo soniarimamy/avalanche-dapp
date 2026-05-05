@@ -21,7 +21,8 @@ const theme = createTheme({
 });
 
 function App() {
-  const { account, isConnected } = useWeb3();
+  const { account, chainId, isConnected } = useWeb3();
+  const currencySymbol = chainId === 1337 ? 'ETH' : 'AVAX';
   const [recipient, setRecipient] = useState('');
   const [amount, setAmount] = useState('');
   const [balance, setBalance] = useState('0');
@@ -36,7 +37,7 @@ function App() {
     if (isConnected && account) {
       fetchBalance();
     }
-  }, [isConnected, account]);
+  }, [isConnected, account, chainId]);
 
   const fetchBalance = async () => {
     try {
@@ -92,7 +93,7 @@ function App() {
                     <Alert severity="info">
                       Connected Account: {account}
                       <br />
-                      Balance: {parseFloat(balance).toFixed(4)} AVAX
+                      Balance: {parseFloat(balance).toFixed(4)} {currencySymbol}
                     </Alert>
                   </Grid>
                   <Grid size={12}>
@@ -110,7 +111,7 @@ function App() {
                       />
                       <TextField
                         fullWidth
-                        label="Amount (AVAX)"
+                        label={`Amount (${currencySymbol})`}
                         type="number"
                         value={amount}
                         onChange={(e) => setAmount(e.target.value)}

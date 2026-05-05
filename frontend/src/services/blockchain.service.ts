@@ -78,7 +78,8 @@ export class BlockchainService {
   }
 
   async getBalance(address: string): Promise<string> {
-    if (!this.provider) await this.initProvider();
+    // Toujours créer un provider frais pour refléter le réseau actuel de MetaMask
+    await this.initProvider();
     const balance = await this.provider!.getBalance(address);
     return ethers.utils.formatEther(balance);
   }

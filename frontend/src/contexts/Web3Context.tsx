@@ -110,12 +110,11 @@ export const Web3Provider: React.FC<Web3ProviderProps> = ({ children }) => {
       setChainId(parseInt(chain, 16));
       setIsConnected(true);
 
-      // Vérifier si on est sur le bon réseau
+      // Réseaux acceptés : Hardhat Local (1337) et Fuji Testnet (43113)
       const currentChainId = parseInt(chain, 16);
-      if (currentChainId !== 43113) {
-        // Fuji Testnet
-        setError('Please switch to Avalanche Fuji Testnet');
-        await switchToAvalancheNetwork();
+      const ACCEPTED_CHAINS = [1337, 43113];
+      if (!ACCEPTED_CHAINS.includes(currentChainId)) {
+        setError('Please switch to Hardhat Local (1337) or Fuji Testnet (43113)');
       }
     } catch (error: any) {
       console.error('Error connecting wallet:', error);

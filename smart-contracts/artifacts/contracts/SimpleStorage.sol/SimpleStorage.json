@@ -1,0 +1,62 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "SimpleStorage",
+  "sourceName": "contracts/SimpleStorage.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "newData",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "updater",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "DataStored",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "get",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_data",
+          "type": "uint256"
+        }
+      ],
+      "name": "set",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5060ea8061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806360fe47b11460375780636d4ce63c146048575b600080fd5b60466042366004609c565b605d565b005b60005460405190815260200160405180910390f35b6000819055604051428152339082907f378b68e2c3e1055819a141af15c50ced2dd34f539d158fc619f35eed69fb42079060200160405180910390a350565b60006020828403121560ad57600080fd5b503591905056fea264697066735822122087237d6285802dfc286807ffb9689582c792976eb7b21d31d4f670935316e13e64736f6c63430008130033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c806360fe47b11460375780636d4ce63c146048575b600080fd5b60466042366004609c565b605d565b005b60005460405190815260200160405180910390f35b6000819055604051428152339082907f378b68e2c3e1055819a141af15c50ced2dd34f539d158fc619f35eed69fb42079060200160405180910390a350565b60006020828403121560ad57600080fd5b503591905056fea264697066735822122087237d6285802dfc286807ffb9689582c792976eb7b21d31d4f670935316e13e64736f6c63430008130033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
